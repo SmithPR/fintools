@@ -1,0 +1,14 @@
+{
+    "licenseKey": "contract_identifier",
+    "runtime": {
+        "version": "stable"
+    },
+    "startup_app": {
+        "name": "Openfin App Manager",
+        "uuid": "33aa9062-9eb0-4875-b819-c90f38ef03ea",
+        "url": "http://localhost:3000/index.html",
+        "autoShow": true,
+        "defaultWidth": 800,
+        "defaultHeight": 600
+    }
+}
