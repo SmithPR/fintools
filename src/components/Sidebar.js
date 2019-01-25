@@ -22,7 +22,7 @@ const styles = theme => ({
     drawer: {
         width: drawerWidth,
         flexShrink: 0,
-        whiteSpace: 'nowrap',
+        whiteSpace: 'nowrap'
     },
     drawerOpen: {
         width: drawerWidth,
@@ -45,6 +45,14 @@ const styles = theme => ({
     toolbar: {
         minHeight: '36px'
     },
+    list: {
+        padding: '0 0',
+        overflow: 'hidden'
+    },
+    listItem: {
+        padding: '6px 16px',
+        margin: '8px 0'
+    }
 });
 
 function Sidebar(props){
@@ -63,21 +71,22 @@ function Sidebar(props){
             }),
           }}
           open={props.expanded}
+          onClick={props.toggleSidebar}
         >
             <div className={classes.toolbar} />
-            <List>
+            <List className={classes.list}>
               
-                <ListItem button key="home" selected>
+                <ListItem button key="home" selected className={classes.listItem}>
                     <ListItemIcon><HomeIcon /></ListItemIcon>
                     <ListItemText primary={'Home'} />
                 </ListItem>
 
-                <ListItem button key="directory">
+                <ListItem button key="directory" className={classes.listItem}>
                     <ListItemIcon><SearchIcon /></ListItemIcon>
                     <ListItemText primary="Discover Apps" />
                 </ListItem>
 
-                <ListItem button key="create">
+                <ListItem button key="create" className={classes.listItem}>
                     <ListItemIcon><AddIcon /></ListItemIcon>
                     <ListItemText primary="Create an App" />
                 </ListItem>

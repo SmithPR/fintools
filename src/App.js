@@ -31,7 +31,7 @@ class App extends Component {
         <CssBaseline>
           <MuiThemeProvider theme={theme}>
             <Header toggleSidebar={this.toggleSidebar} />
-            <Sidebar expanded={this.state.sidebarExpanded}/>
+            <Sidebar expanded={this.state.sidebarExpanded} toggleSidebar={this.toggleSidebar}/>
           </MuiThemeProvider>
         </CssBaseline>
       </div>
