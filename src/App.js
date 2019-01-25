@@ -5,8 +5,12 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
+import finApps from './services/finApps.js';
+
 import Header from './components/Header.js';
 import Sidebar from './components/Sidebar.js';
+import AppList from './components/AppList.js';
+
 
 const theme = createMuiTheme({
   typography: {
@@ -20,9 +24,14 @@ class App extends Component {
     super(props);
 
     this.state = { 
-      sidebarExpanded: false
+      sidebarExpanded: false,
+      finApps: {}
     };
     this.toggleSidebar = this.toggleSidebar.bind(this);
+
+    finApps.getOpenApps().then(apps=>{
+      this.setState({finApps: apps});
+    });
   }
   
   render() {
@@ -32,6 +41,7 @@ class App extends Component {
           <MuiThemeProvider theme={theme}>
             <Header toggleSidebar={this.toggleSidebar} />
             <Sidebar expanded={this.state.sidebarExpanded} toggleSidebar={this.toggleSidebar}/>
+            <AppList finApps={this.state.finApps}/>
           </MuiThemeProvider>
         </CssBaseline>
       </div>
