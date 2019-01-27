@@ -40,13 +40,13 @@ const styles = theme => ({
 });
 
 function Header(props) {
-  const { classes, finApps } = props;
+  const { classes, appList, closeApp } = props;
   return (
     <main className={classes.root}>
         {
-            Object.entries(finApps).map(entry=>{
+            Object.entries(appList).map(entry=>{
                 return (
-                    <Card key={entry[0]} className={classes.card} raised="true">
+                    <Card key={entry[0]} className={classes.card}>
                         <CardMedia className={classes.appIcon} image={
                             entry[1].shortcut && entry[1].shortcut.icon || 
                             entry[1]['startup_app'] && entry[1]['startup_app'].applicationIcon
@@ -68,7 +68,9 @@ function Header(props) {
                             </CardContent>
                         </div>
                         <CardActions>
-                            <IconButton aria-label="Close App"><CloseIcon /></IconButton>
+                            <IconButton aria-label="Close App" onClick={()=>closeApp(entry[0])}>
+                                <CloseIcon />
+                            </IconButton>
                         </CardActions>
                     </Card>
                 )
