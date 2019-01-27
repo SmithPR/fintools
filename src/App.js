@@ -15,7 +15,7 @@ import AppList from './components/AppList.js';
 const theme = createMuiTheme({
   typography: {
     fontSize: 12,
-    htmlFontSize: 14
+    htmlFontSize: 12
   }
 });
 
