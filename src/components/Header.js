@@ -6,17 +6,24 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import Button from '@material-ui/core/Button';
+import CloseIcon from '@material-ui/icons/CloseSharp';
+import MinimizeIcon from '@material-ui/icons/MinimizeSharp';
+import MaximizeIcon from '@material-ui/icons/CheckBoxOutlineBlankSharp';
 
 const styles = theme => ({
     root: {
-        flexGrow: 1,
+        flexGrow: 1
     },
     outerBar: {
         zIndex: theme.zIndex.drawer + 1,
+        ['-webkit-app-region']: 'drag',
+        paddingLeft: 1,
+        paddingRight: 1
     },
     headerBar: {
-        minHeight: '36px'
+        minHeight: '36px',
+        paddingLeft: 0,
+        paddingRight: 0
     },
     appTitle: {
         flexGrow: 1,
@@ -24,12 +31,40 @@ const styles = theme => ({
         fontSize: '1em'
     },
     menuButton: {
-        marginLeft: -12,
-        marginRight: 20,
-        padding: '4px 12px',
-        // transform: 'scale(.75,.75)'
+        ['-webkit-app-region']: 'no-drag',
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit*4,
+        padding: '6px 6px',
     },
+    actionArea: {
+        
+    },
+    actionButton: {
+        ['-webkit-app-region']: 'no-drag',
+        padding: '6px 6px',
+        margin: 0,
+        marginRight: theme.spacing.unit
+    },
+    actionButtonIcon: {
+        fontSize: 16
+    }
 });
+
+const minimizeApp = e => {
+    if(window.fin){
+        window.fin.desktop.Window.getCurrent().minimize();
+    }
+};
+const maximizeApp = e => {
+    if(window.fin){
+        window.fin.desktop.Window.getCurrent().maximize();
+    }
+};
+const closeApp = e => {
+    if(window.fin){
+        window.fin.desktop.Application.getCurrent().close();
+    }
+};
 
 function Header(props) {
   const { classes, toggleSidebar } = props;
@@ -41,8 +76,20 @@ function Header(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" color="inherit" className={classes.appTitle}>
-            Openfin App Manager
+            FinTools App Manager
           </Typography>
+          <div className={classes.grow} />
+          <div>
+            <IconButton className={classes.actionButton} color="inherit" aria-label="Menu" onClick={minimizeApp}>
+              <MinimizeIcon className={classes.actionButtonIcon} />
+            </IconButton>
+            <IconButton className={classes.actionButton} color="inherit" aria-label="Menu" onClick={maximizeApp}>
+              <MaximizeIcon className={classes.actionButtonIcon} />
+            </IconButton>
+            <IconButton className={classes.actionButton} color="inherit" aria-label="Menu" onClick={closeApp}>
+              <CloseIcon className={classes.actionButtonIcon} />
+            </IconButton>
+          </div>
         </Toolbar>
       </AppBar>
     </div>

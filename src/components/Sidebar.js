@@ -37,7 +37,7 @@ const styles = theme => ({
             duration: theme.transitions.duration.leavingScreen,
         }),
         overflowX: 'hidden',
-        width: theme.spacing.unit * 7 + 1,
+        width: 49,
             [theme.breakpoints.up('sm')]: {
             width: theme.spacing.unit * 9 + 1,
         },
@@ -47,10 +47,11 @@ const styles = theme => ({
     },
     list: {
         padding: '0 0',
+        paddingLeft: 1,
         overflow: 'hidden'
     },
     listItem: {
-        padding: '6px 16px',
+        padding: `${theme.spacing.unit}px ${theme.spacing.unit*2}px`,
         margin: '8px 0'
     }
 });
