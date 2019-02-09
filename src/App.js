@@ -9,6 +9,11 @@ import MainWindow from './components/MainWindow.js';
 import WebPreview from './components/WebPreview.js';
 
 const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#5669d1'
+    }
+  },
   typography: {
     fontSize: 12,
     htmlFontSize: 12
