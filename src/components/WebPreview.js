@@ -9,6 +9,9 @@ import green from '@material-ui/core/colors/green';
 
 import MainWindow from './MainWindow.js';
 
+const downloadLocation = `https://install.openfin.co/download/?config=${encodeURI(window.location.origin+'/app.json')}&fileName=FinTools%20App%20Manager%20Installer&unzipped=true`
+
+
 const styles= theme=>({
     webPreview: {
         position: 'absolute',
@@ -58,7 +61,7 @@ const WebPreview = ({classes}) => (
             <h1>FinTools App Manager</h1>
         </div>
         <div className={classes.buttonContainer}>
-            <Fab variant="extended" color="primary" aria-label="Add" className={classes.downloadButton}>
+            <Fab variant="extended" color="primary" aria-label="Add" className={classes.downloadButton} href={downloadLocation}>
                 <DownloadIcon className={classes.extendedIcon} />
                 Download
             </Fab>
