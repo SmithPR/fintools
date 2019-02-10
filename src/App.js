@@ -5,12 +5,15 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
-import Header from './components/Header.js';
-import Sidebar from './components/Sidebar.js';
-import Home from './components/Home.js';
-
+import MainWindow from './components/MainWindow.js';
+import WebPreview from './components/WebPreview.js';
 
 const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#5669d1'
+    }
+  },
   typography: {
     fontSize: 12,
     htmlFontSize: 12
@@ -26,11 +29,6 @@ const theme = createMuiTheme({
 class App extends Component {
   constructor(props){
     super(props);
-
-    this.state = { 
-      sidebarExpanded: false
-    };
-    this.toggleSidebar = this.toggleSidebar.bind(this);
   }
   
   render() {
@@ -38,17 +36,11 @@ class App extends Component {
       <div className="App">
         <CssBaseline>
           <MuiThemeProvider theme={theme}>
-            <Header toggleSidebar={this.toggleSidebar} />
-            <Sidebar expanded={this.state.sidebarExpanded} toggleSidebar={this.toggleSidebar}/>
-            <Home />
+            { window.fin ? <MainWindow /> : <WebPreview /> }
           </MuiThemeProvider>
         </CssBaseline>
       </div>
     );
-  }
-
-  toggleSidebar(){
-    this.setState({ sidebarExpanded: !this.state.sidebarExpanded });
   }
 }
 

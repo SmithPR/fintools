@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import finApps from '../services/finApps.js';
+import finApps from '../../services/finApps.js';
 
 import AppList from './AppList.js';
 

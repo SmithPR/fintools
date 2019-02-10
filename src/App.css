@@ -1,5 +1,5 @@
 
-.App::before {
+.MainWindow::before {
   content: '';
   position: absolute;
   display: block;

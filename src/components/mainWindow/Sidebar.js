@@ -29,7 +29,7 @@ const styles = theme => ({
         transition: theme.transitions.create('width', {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.enteringScreen,
-        }),
+        })
     },
     drawerClose: {
         transition: theme.transitions.create('width', {
@@ -40,7 +40,10 @@ const styles = theme => ({
         width: 49,
             [theme.breakpoints.up('sm')]: {
             width: theme.spacing.unit * 9 + 1,
-        },
+        }
+    },
+    drawerPaper: {
+        position: 'absolute'
     },
     toolbar: {
         minHeight: '36px'
@@ -66,7 +69,7 @@ function Sidebar(props){
             [classes.drawerClose]: !props.expanded,
           })}
           classes={{
-            paper: classNames({
+            paper: classNames(classes.drawerPaper, {
               [classes.drawerOpen]: props.expanded,
               [classes.drawerClose]: !props.expanded,
             }),

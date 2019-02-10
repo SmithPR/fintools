@@ -18,7 +18,8 @@ const styles = theme => ({
         zIndex: theme.zIndex.drawer + 1,
         ['-webkit-app-region']: 'drag',
         paddingLeft: 1,
-        paddingRight: 1
+        paddingRight: 1,
+        position: 'absolute'
     },
     headerBar: {
         minHeight: '36px',
