@@ -5,9 +5,9 @@
     },
     "startup_app": {
         "name": "FinTools App Manager",
-        "uuid": "33aa9062-9eb0-4875-b819-c90f38ef03ea",
-        "url": "http://localhost:3000/index.html",
-        "icon": "http://localhost:3000/logo.png",
+        "uuid": "fintools_live",
+        "url": "http://smithpr.github.io/fintools/index.html",
+        "icon": "http://smithpr.github.io/fintools/logo.png",
         "autoShow": true,
         "defaultWidth": 800,
         "defaultHeight": 600,
@@ -18,6 +18,6 @@
         "description": "Manage your Openfin Applications",
         "company": "FinTools",
         "target": ["start-menu", "desktop"],
-        "icon": "http://localhost:3000/logo.png"
+        "icon": "http://smithpr.github.io/fintools/logo.png"
     }
 }

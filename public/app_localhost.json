@@ -1,0 +1,23 @@
+{
+    "licenseKey": "contract_identifier",
+    "runtime": {
+        "version": "stable"
+    },
+    "startup_app": {
+        "name": "FinTools App Manager",
+        "uuid": "fintools_local",
+        "url": "http://localhost:3000/index.html",
+        "icon": "http://localhost:3000/logo.png",
+        "autoShow": true,
+        "defaultWidth": 800,
+        "defaultHeight": 600,
+        "frame": false
+    },
+    "shortcuts": {
+        "name": "FinTools App Manager",
+        "description": "Manage your Openfin Applications",
+        "company": "FinTools",
+        "target": ["start-menu", "desktop"],
+        "icon": "http://localhost:3000/logo.png"
+    }
+}
