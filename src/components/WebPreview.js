@@ -4,8 +4,11 @@ import { withStyles } from '@material-ui/core/styles';
 
 import Grid from '@material-ui/core/Grid';
 import Fab from '@material-ui/core/Fab';
-import DownloadIcon from '@material-ui/icons/GetApp';
 import Divider from '@material-ui/core/Divider';
+import IconButton from '@material-ui/core/IconButton';
+
+import DownloadIcon from '@material-ui/icons/GetApp';
+import { GithubCircle } from 'mdi-material-ui';
 
 import green from '@material-ui/core/colors/green';
 
@@ -58,19 +61,28 @@ const styles= theme=>({
         marginBottom: theme.spacing.unit*4
     },
     appLogo: {
-        fontSize: '3em',
-        marginBottom: '-0.2em',
-        marginRight: theme.spacing.unit
+        fontSize: '2.5em',
+        marginBottom: '-0.227em',
+        marginRight: 8
     },
     pageTitle: {
         display: 'inline-block',
-        fontSize: 30,
+        fontSize: 24,
         fontWeight: 'normal',
         margin: 0
     },
+    socialButton: {
+        color: 'rgba(255,255,255,0.95)',
+        padding: 8,
+        marginTop: -1*theme.spacing.unit,
+        float: 'right'
+    },
+    socialButtonIcon: {
+        fontSize: '1.5em'
+    },
     divider: {
         backgroundColor: 'rgba(255,255,255,0.18)',
-        marginTop: theme.spacing.unit*2
+        marginTop: theme.spacing.unit
     }
 
 });
@@ -84,7 +96,11 @@ const WebPreview = ({classes}) => (
                     FinTools App Manager
                 </h1>
             </Grid>
-            <Grid item xs={4}>Socials</Grid>
+            <Grid item xs={4}>
+                <IconButton className={classes.socialButton} title="Github Repository" href="https://github.com/SmithPR/fintools">
+                    <GithubCircle className={classes.socialButtonIcon}/>
+                </IconButton>
+            </Grid>
         </Grid>
         <Divider className={classes.divider} />
         <div>
