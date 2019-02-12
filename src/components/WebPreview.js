@@ -9,7 +9,7 @@ import green from '@material-ui/core/colors/green';
 
 import MainWindow from './MainWindow.js';
 
-const webDirectory = window.location.href.substring(0, String.lastIndexOf(window.location.href, '/'));
+const webDirectory = window.location.href.substring(0, window.location.href.lastIndexOf('/'));
 const downloadLocation = `https://install.openfin.co/download/?config=${encodeURI(webDirectory+'/app_'+window.location.hostname+'.json')}&fileName=FinTools%20App%20Manager%20Installer&unzipped=true`
 
 
