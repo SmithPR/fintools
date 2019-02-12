@@ -9,7 +9,8 @@ import green from '@material-ui/core/colors/green';
 
 import MainWindow from './MainWindow.js';
 
-const downloadLocation = `https://install.openfin.co/download/?config=${encodeURI(window.location.origin+'/app_'+window.location.hostname+'.json')}&fileName=FinTools%20App%20Manager%20Installer&unzipped=true`
+const webDirectory = window.location.href.substring(0, String.lastIndexOf(window.location.href, '/'));
+const downloadLocation = `https://install.openfin.co/download/?config=${encodeURI(webDirectory+'/app_'+window.location.hostname+'.json')}&fileName=FinTools%20App%20Manager%20Installer&unzipped=true`
 
 
 const styles= theme=>({
