@@ -2,4 +2,5 @@
 Prop3=19,11
 [InternetShortcut]
 IDList=
-URL=https://install.openfin.co/download/?config=http%3A%2F%2Flocalhost%3A3000%2Fapp.json&fileName=Openfin%20App%20Manager%20Installer&unzipped=true
+URL=https://install.openfin.co/download/?config=http%3A%2F%2Flocalhost%3A3000%2Fapp_localhost.json&fileName=Openfin%20App%20Manager%20Installer&unzipped=true
+HotKey=0
