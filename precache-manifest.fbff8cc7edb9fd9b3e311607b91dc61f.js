@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/fintools/static/js/runtime~main.ca355a26.js"
   },
   {
-    "revision": "1083ca7e6bb6f1838a18",
-    "url": "/fintools/static/js/main.1083ca7e.chunk.js"
+    "revision": "58e4a1a6c62e7a9cd60a",
+    "url": "/fintools/static/js/main.58e4a1a6.chunk.js"
   },
   {
     "revision": "ed66437df6217760db0e",
     "url": "/fintools/static/js/1.ed66437d.chunk.js"
   },
   {
-    "revision": "1083ca7e6bb6f1838a18",
+    "revision": "58e4a1a6c62e7a9cd60a",
     "url": "/fintools/static/css/main.184019fb.chunk.css"
   },
   {
-    "revision": "e36e7a53459ec6f74fa17b042b146b3b",
+    "revision": "1be505a75a0034bd2cab738a83c9e40e",
     "url": "/fintools/index.html"
   }
 ];
