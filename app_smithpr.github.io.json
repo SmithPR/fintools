@@ -13,7 +13,7 @@
         "defaultHeight": 600,
         "frame": false
     },
-    "shortcuts": {
+    "shortcut": {
         "name": "FinTools App Manager",
         "description": "Manage your Openfin Applications",
         "company": "FinTools",

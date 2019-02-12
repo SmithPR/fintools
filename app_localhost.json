@@ -4,7 +4,7 @@
         "version": "stable"
     },
     "startup_app": {
-        "name": "FinTools App Manager",
+        "name": "FinTools App Manager Local",
         "uuid": "fintools_local",
         "url": "http://localhost:3000/index.html",
         "icon": "http://localhost:3000/logo.png",
@@ -13,8 +13,8 @@
         "defaultHeight": 600,
         "frame": false
     },
-    "shortcuts": {
-        "name": "FinTools App Manager",
+    "shortcut": {
+        "name": "FinTools App Manager Local",
         "description": "Manage your Openfin Applications",
         "company": "FinTools",
         "target": ["start-menu", "desktop"],
