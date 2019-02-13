@@ -13,6 +13,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import CloseIcon from '@material-ui/icons/Close';
+import Avatar from '@material-ui/core/Avatar';
 
 const styles = theme => ({
     root: {
@@ -45,33 +46,29 @@ function Header(props) {
     <main className={classes.root}>
         {
             Object.entries(appList).map(entry=>{
-                return (
-                    <Card key={entry[0]} className={classes.card}>
-                        <CardMedia className={classes.appIcon} image={
-                            entry[1].shortcut && entry[1].shortcut.icon || 
-                            entry[1]['startup_app'] && entry[1]['startup_app'].applicationIcon
-                        }/>
-                        <div className={classes.cardRight}>
-                            <CardContent className={classes.cardRightInner}>
-                                <Typography component="strong" variant="subtitle1">
-                                    {
-                                        entry[1].shortcut && entry[1].shortcut.description ||
-                                        entry[1]['startup_app'] && entry[1]['startup_app'].name
-                                    }
-                                </Typography>
-                                <Typography component="strong" variant="subtitle2">
-                                    {
-                                        entry[1].shortcut && entry[1].shortcut.company ||
-                                        entry[1].supportInformation && entry[1].supportInformation.company
-                                    }
-                                </Typography>
-                            </CardContent>
-                        </div>
-                        <CardActions>
-                            <IconButton aria-label="Close App" onClick={()=>closeApp(entry[0])}>
-                                <CloseIcon />
-                            </IconButton>
-                        </CardActions>
+                return (                    
+                    <Card key={entry[0]}>
+                        <CardHeader
+                            avatar={
+                                <Avatar alt={entry[1]['startup_app'].name}
+                                    src={entry[1].shortcut && entry[1].shortcut.icon || entry[1]['startup_app'].icon} 
+                                />
+                            }
+                            action={
+                                <IconButton aria-label="Close App" onClick={()=>closeApp(entry[0])}>
+                                    <CloseIcon />
+                                </IconButton>
+                            }
+                            title={entry[1]['startup_app'].name}
+                            subtitle={entry[1].shortcut.company}
+                        />
+                        <CardContent>
+                            <Typography component="p">
+                                {
+                                    entry[1]['startup_app'].description || entry[1].shortcut.description
+                                }
+                            </Typography>
+                        </CardContent>
                     </Card>
                 )
             })
