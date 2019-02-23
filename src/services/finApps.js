@@ -7,17 +7,19 @@ async function getOpenApps(){
 
         window.fin.desktop.System.getAllApplications(appsArray=>{
             for(let app of appsArray){
-
-                //Fetch each app's manifest
-                manifestPromises.push(new Promise( (resolveInner, reject) =>{
-                    let finApp = window.fin.desktop.Application.wrap(app.uuid);
-                    finApp.getManifest( appManifest=>{
-                        console.log(appManifest);
-                        appsMap[app.uuid] = appManifest;
-                        resolveInner(true);
-                    });
-                }, reject));
+                if(app.isRunning){
+                    //Fetch each app's manifest
+                    manifestPromises.push(new Promise( (resolveInner, reject) =>{
+                        let finApp = window.fin.desktop.Application.wrap(app.uuid);
+                        finApp.getManifest( appManifest=>{
+                            console.debug(appManifest);
+                            appsMap[app.uuid] = appManifest;
+                            resolveInner(true);
+                        });
+                    }));
+                }
             }
+            console.debug(appsArray);
             resolve(true);
         }, reject);
     });

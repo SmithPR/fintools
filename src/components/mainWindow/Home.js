@@ -18,9 +18,9 @@ class Home extends Component {
   }
   
   render() {
-    return (
-        <AppList appList={this.state.finApps} closeApp={this.closeApp}/>
-    );
+    return this.state.finApps ? (
+      <AppList appList={this.state.finApps} closeApp={this.closeApp}/>
+    ) : (<p></p>);
   }
 
   componentDidMount(){
@@ -32,12 +32,14 @@ class Home extends Component {
 
   loadOpenApps(){
     finApps.getOpenApps().then(apps=>{
-      this.setState({finApps: apps});
+      this.setState({
+        finApps: apps
+      });
     });
   }
   closeApp(uuid){
     const loadOpenApps = this.loadOpenApps;
-    finApps.closeApp(uuid).then(()=>this.loadOpenApps());
+    finApps.closeApp(uuid).then(loadOpenApps, loadOpenApps);
   }
 }
 
