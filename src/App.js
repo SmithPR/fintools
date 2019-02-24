@@ -23,6 +23,29 @@ const theme = createMuiTheme({
   },
   shape: {
     borderRadius: 2
+  },
+  overrides: {
+    MuiCard: {
+    },
+    MuiAvatar: {
+      root: {
+        borderRadius: 0
+      }
+    },
+    MuiCardHeader: {
+      root: {
+        padding: 6
+      }
+    },
+    MuiCardContent: {
+      root: {
+        padding: 6,
+
+        '&:last-child': {
+          paddingBottom: 6
+        }
+      }
+    }
   }
 });
 
